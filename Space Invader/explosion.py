@@ -9,9 +9,9 @@ class Explosion(pygame.sprite.Sprite):
             if size == 1:
                 explosion_img = pygame.transform.scale(org_img, (20, 20))
             if size == 2:
-                explosion_img = pygame.transform.scale(org_img, (40, 40))
+                explosion_img = pygame.transform.scale(org_img, (50, 50))
             if size == 3:
-                explosion_img = pygame.transform.scale(org_img, (160, 160))
+                explosion_img = pygame.transform.scale(org_img, (140, 140))
             explosion_self.images.append(explosion_img) #add the image to the list
         explosion_self.index = 0
         explosion_self.image = explosion_self.images[explosion_self.index]
@@ -20,7 +20,7 @@ class Explosion(pygame.sprite.Sprite):
 
 
     def update(explosion_self):
-        explosion_loop_duration = 3
+        explosion_loop_duration = 5
         #update explosion animation
         explosion_self.counter += 1
         if explosion_self.counter >= explosion_loop_duration and explosion_self.index <= len(explosion_self.images) - 1:
